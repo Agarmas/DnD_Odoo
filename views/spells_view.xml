@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="spell_view_tree" model="ir.ui.view">
+        <field name="name">spell.view.tree</field>
+        <field name="model">spell</field>
+        <field name="arch" type="xml">
+            <tree string="">
+                <field name="name" />
+                <field name="classes" />
+                <field name="level" />
+                <field name="school" />
+                <field name="cast_time" />
+                <field name="range" />
+                <field name="duration" />
+                <field name="verbal" />
+                <field name="somatic" />
+                <field name="material" />
+                <field name="ritual" />
+                <field name="material_cost" />
+                <field name="description" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="spell_view_form" model="ir.ui.view">
+        <field name="name">spell.view.form</field>
+        <field name="model">spell</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="classes" />
+                        <field name="level" />
+                        <field name="school" />
+                        <field name="cast_time" />
+                        <field name="range" />
+                        <field name="duration" />
+                        <field name="verbal" />
+                        <field name="somatic" />
+                        <field name="material" />
+                        <field name="ritual" />
+                        <field name="material_cost" />
+                        <field name="description" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="spell_action" model="ir.actions.act_window">
+        <field name="name">Spell</field>
+        <field name="res_model">spell</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+</odoo>

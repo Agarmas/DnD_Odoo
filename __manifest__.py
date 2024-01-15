@@ -1,5 +1,5 @@
 {
-    'name': "dnd",
+    'name': "Dungeons And Dragons",
 
     'summary': """DnD 5e assistance""",
 
@@ -21,6 +21,9 @@
     'data': [
         'security/security.xml',
         'security/ir.model.access.csv',
+        'views/items_view.xml',
+        'views/spells_view.xml',
+        'views/menu.xml',
     ],
     
     # only loaded in demonstration mode

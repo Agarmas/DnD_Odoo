@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- General menu -->
+    <menuitem id="dnd_menu" name="Dungeons And Dragons" />
+
+    <!-- Items -->
+    <menuitem id="items_menu" name="Items" parent="dnd_menu" action="item_action" />
+
+    <!-- Spells -->
+    <menuitem id="spells_menu" name="Spells" parent="dnd_menu" action="spell_action" />
+
+</odoo>

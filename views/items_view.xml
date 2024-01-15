@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="item_view_tree" model="ir.ui.view">
+        <field name="name">item.view.tree</field>
+        <field name="model">item</field>
+        <field name="arch" type="xml">
+            <tree string="Items">
+                <field name="name" />
+                <field name="type1" />
+                <field name="type2" />
+                <field name="weight" />
+                <field name="price" />
+                <field name="description" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="item_view_form" model="ir.ui.view">
+        <field name="name">item.view.form</field>
+        <field name="model">item</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="type1" />
+                        <field name="type2" />
+                        <field name="weight" />
+                        <field name="price" />
+                        <field name="description" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="item_action" model="ir.actions.act_window">
+        <field name="name">Item</field>
+        <field name="res_model">item</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+</odoo>

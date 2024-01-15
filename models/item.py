@@ -3,7 +3,7 @@ from odoo import models, fields, api
 
 class Item(models.Model):
     #Special fields
-    _name = 'dnd.machine'
+    _name = 'item'
     _description = 'Posible items in the game'
 
     #Fields
@@ -35,3 +35,9 @@ class Item(models.Model):
         string='Price',
         help='Item\'s price (PO)'
     )       
+    
+    description = fields.Text(
+        string='Description',
+        help='Item\'s description'
+    )
+    
