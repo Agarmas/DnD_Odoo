@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="spell_slot_view_tree" model="ir.ui.view">
+        <field name="name">spell_slot.view.tree</field>
+        <field name="model">spell_slot</field>
+        <field name="arch" type="xml">
+            <tree string="">
+                <field name="ss_level" />
+                <field name="ss_qty" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="spell_slot_view_form" model="ir.ui.view">
+        <field name="name">spell_slot.view.form</field>
+        <field name="model">spell_slot</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <field name="ss_level" />
+                        <field name="ss_qty" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="spell_slot_action" model="ir.actions.act_window">
+        <field name="name">Spell slot</field>
+        <field name="res_model">spell_slot</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+</odoo>

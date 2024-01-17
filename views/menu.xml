@@ -2,12 +2,34 @@
 <odoo>
 
     <!-- General menu -->
-    <menuitem id="dnd_menu" name="Dungeons And Dragons" />
+    <menuitem
+        id="dnd_menu"
+        name="Dungeons And Dragons"/>
 
     <!-- Items -->
-    <menuitem id="items_menu" name="Items" parent="dnd_menu" action="item_action" />
+    <menuitem
+        id="items_menu"
+        name="Items"
+        action="item_action"
+        parent="dnd_menu"/>
 
     <!-- Spells -->
-    <menuitem id="spells_menu" name="Spells" parent="dnd_menu" action="spell_action" />
+    <menuitem
+        id="spells_menu"
+        name="Spells"
+        action="spell_action"
+        parent="dnd_menu"/>
+
+    <!-- Characters -->
+    <menuitem
+        id="characters_menu"
+        name="Characters"
+        parent="dnd_menu"/>
+
+    <menuitem
+        id="spell_slot_menu"
+        name="Spell slot"
+        action="spell_slot_action"
+        parent="characters_menu" />
 
 </odoo>
