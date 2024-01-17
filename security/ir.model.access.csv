@@ -5,3 +5,4 @@ access_spell_slot,access.spell_slot,model_spell_slot,base.group_user,1,1,1,1
 access_character,access.character,model_character,base.group_user,1,1,1,1
 access_c_class,access.c_class,model_c_class,base.group_user,1,1,1,1
 access_characteristic,access.characteristic,model_characteristic,base.group_user,1,1,1,1
+access_language,access.language,model_language,base.group_user,1,1,1,1

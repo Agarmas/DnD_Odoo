@@ -27,6 +27,7 @@
         'views/characters_view.xml',
         'views/c_classes_view.xml',
         'views/characteristics_view.xml',
+        'views/languages_view.xml',
         'views/menu.xml',
     ],
     

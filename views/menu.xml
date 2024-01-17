@@ -42,12 +42,18 @@
         id="c_class_menu"
         name="Classes"
         action="c_class_action"
-        parent="characters_menu"/>
+        parent="characters_menu" />
 
     <menuitem
         id="characteristic_menu"
         name="Characteristics"
         action="characteristic_action"
-        parent="characters_menu"/>
+        parent="characters_menu" />
 
+    <!-- Language -->
+    <menuitem
+        id="language_menu"
+        name="Languages"
+        action="language_action"
+        parent="dnd_menu" />
 </odoo>
