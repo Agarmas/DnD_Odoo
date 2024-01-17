@@ -28,6 +28,8 @@
     
     # only loaded in demonstration mode
     'demo': [   
+        'demo/items_demo.csv',
+        'demo/spells_demo.csv',
     ],
     
     'installable': True,
