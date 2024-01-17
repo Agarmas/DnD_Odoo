@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="character_view_kanban" model="ir.ui.view">
+        <field name="name">character.view.kanban</field>
+        <field name="model">character</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_image">
+                            <img src="/web/image/character/%s" alt="Character's image"
+                                class="oe_kanban_avatar oe_avatar-32" />
+                        </div>
+                        <p>
+                            <field name="name" />
+                        </p>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="character_view_tree" model="ir.ui.view">
+        <field name="name">character.view.tree</field>
+        <field name="model">character</field>
+        <field name="arch" type="xml">
+            <tree string="Characters">
+                <field name="name" />
+                <field name="c_class" />
+                <field name="level" />
+                <field name="race" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="character_view_form" model="ir.ui.view">
+        <field name="name">character.view.form</field>
+        <field name="model">character</field>
+        <field name="arch" type="xml">
+            <form string="New character">
+                <sheet>
+                    <group>
+                        <field name="img" widget="image" />
+                        <field name="name" />
+                        <field name="c_class" />
+                        <field name="exp" />
+                        <field name="level"
+                            readonly="1"
+                        />
+                        <field name="race" />
+                        <field name="strength" />
+                        <field name="dexterity" />
+                        <field name="constitution" />
+                        <field name="intelligence" />
+                        <field name="wisdom" />
+                        <field name="charisma" />
+                        <field name="spell_slots_ids" />
+                        <field name="items_ids" />
+                        <field name="spells_known_ids" />
+                        <field name="spells_prepared_ids" />
+                        <field name="max_hp" />
+                        <field name="hp" />
+                        <field name="necrotic_dmg" />
+                        <field name="money" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="character_action" model="ir.actions.act_window">
+        <field name="name">Character</field>
+        <field name="res_model">character</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+</odoo>

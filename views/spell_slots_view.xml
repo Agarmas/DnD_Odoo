@@ -4,7 +4,7 @@
         <field name="name">spell_slot.view.tree</field>
         <field name="model">spell_slot</field>
         <field name="arch" type="xml">
-            <tree string="">
+            <tree string="Spell slots">
                 <field name="ss_level" />
                 <field name="ss_qty" />
             </tree>
@@ -15,7 +15,7 @@
         <field name="name">spell_slot.view.form</field>
         <field name="model">spell_slot</field>
         <field name="arch" type="xml">
-            <form string="">
+            <form string="New spell slot">
                 <sheet>
                     <group>
                         <field name="ss_level" />

@@ -4,7 +4,7 @@
         <field name="name">spell.view.tree</field>
         <field name="model">spell</field>
         <field name="arch" type="xml">
-            <tree string="">
+            <tree string="Spells">
                 <field name="name" />
                 <field name="classes" />
                 <field name="level" />
@@ -26,7 +26,7 @@
         <field name="name">spell.view.form</field>
         <field name="model">spell</field>
         <field name="arch" type="xml">
-            <form string="">
+            <form string="New spell">
                 <sheet>
                     <group>
                         <field name="name" />

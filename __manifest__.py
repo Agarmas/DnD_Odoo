@@ -23,6 +23,8 @@
         'security/ir.model.access.csv',
         'views/items_view.xml',
         'views/spells_view.xml',
+        'views/spell_slots_view.xml',
+        'views/characters_view.xml',
         'views/menu.xml',
     ],
     

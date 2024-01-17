@@ -19,7 +19,7 @@
         <field name="name">item.view.form</field>
         <field name="model">item</field>
         <field name="arch" type="xml">
-            <form string="">
+            <form string="New item">
                 <sheet>
                     <group>
                         <field name="name" />
