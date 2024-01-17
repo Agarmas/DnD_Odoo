@@ -38,4 +38,16 @@
         action="character_action"
         parent="characters_menu" />
 
+    <menuitem
+        id="c_class_menu"
+        name="Classes"
+        action="c_class_action"
+        parent="characters_menu"/>
+
+    <menuitem
+        id="characteristic_menu"
+        name="Characteristics"
+        action="characteristic_action"
+        parent="characters_menu"/>
+
 </odoo>

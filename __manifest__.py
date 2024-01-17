@@ -25,6 +25,8 @@
         'views/spells_view.xml',
         'views/spell_slots_view.xml',
         'views/characters_view.xml',
+        'views/c_classes_view.xml',
+        'views/characteristics_view.xml',
         'views/menu.xml',
     ],
     
