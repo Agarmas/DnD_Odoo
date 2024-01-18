@@ -54,6 +54,7 @@
                         readonly="1"
                         />
                         <field name="inspiration" />
+                        <field name="characteristics_ids" />
                         <field name="skills_ids" />
                         <field name="armor_id" />
                     </group>

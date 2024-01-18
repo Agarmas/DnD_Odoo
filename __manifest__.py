@@ -30,6 +30,7 @@
         'views/languages_view.xml',
         'views/races_view.xml',
         'views/skills_view.xml',
+        'views/char_values_view.xml',
         'views/menu.xml',
     ],
     

@@ -152,6 +152,12 @@ class Character(models.Model):
         string='Lore',
     )
     
+    characteristics_ids = fields.One2many(
+        string='Characteristics',
+        comodel_name='char_value',
+        inverse_name='character_id',
+    )
+    
     skills_ids = fields.Many2many(
         string='Skills',
         comodel_name='skill',

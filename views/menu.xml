@@ -45,6 +45,13 @@
         parent="characters_menu" />
 
     <menuitem
+        id="char_value_menu"
+        name="Characteristics"
+        action="char_value_action"
+        parent="characters_menu"/>
+
+    <!-- Characteristics -->
+    <menuitem
         id="characteristics_menu"
         name="Characteristics"
         parent="dnd_menu" />

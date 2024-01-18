@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="char_value_view_tree" model="ir.ui.view">
+        <field name="name">char_value.view.tree</field>
+        <field name="model">char_value</field>
+        <field name="arch" type="xml">
+            <tree string="Characteristic values">
+                <field name="character_id" />
+                <field name="characteristic_id" />
+                <field name="value" />
+                <field name="modifier" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="char_value_view_form" model="ir.ui.view">
+        <field name="name">char_value.view.form</field>
+        <field name="model">char_value</field>
+        <field name="arch" type="xml">
+            <form string="New characteristic value">
+                <sheet>
+                    <group>
+                        <field name="character_id" />
+                        <field name="characteristic_id" />
+                        <field name="value" />
+                        <field name="modifier" 
+                        readonly="1"
+                        />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="char_value_action" model="ir.actions.act_window">
+        <field name="name">Charracteristic value</field>
+        <field name="res_model">char_value</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+</odoo>

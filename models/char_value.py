@@ -4,7 +4,7 @@ from odoo.exceptions import ValidationError
 
 class CharValue(models.Model):
     # Special fields
-    _name = 'your_module.char_value'
+    _name = 'char_value'
     _description = 'Char Value'
 
     # Fields
