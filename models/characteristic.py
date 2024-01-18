@@ -19,3 +19,9 @@ class Characteristic(models.Model):
         inverse_name='spells_characteristic_id',
     )
     
+    skills_ids = fields.One2many(
+        string='Skills',
+        comodel_name='skill',
+        inverse_name='characteristic_id',
+    )
+    

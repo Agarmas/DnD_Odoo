@@ -45,10 +45,21 @@
         parent="characters_menu" />
 
     <menuitem
+        id="characteristics_menu"
+        name="Characteristics"
+        parent="dnd_menu" />
+
+    <menuitem
         id="characteristic_menu"
         name="Characteristics"
         action="characteristic_action"
-        parent="characters_menu" />
+        parent="characteristics_menu" />
+
+    <menuitem
+        id="skill_menu"
+        name="Skills"
+        action="skill_action"
+        parent="characteristics_ids" />
 
     <!-- Languages -->
     <menuitem

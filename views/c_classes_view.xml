@@ -19,6 +19,7 @@
                     <group>
                         <field name="name" />
                         <field name="spells_characteristic_id" />
+                        <field name="proficency_save_ids" />
                     </group>
                 </sheet>
             </form>
@@ -26,7 +27,7 @@
     </record>
 
     <record id="c_class_action" model="ir.actions.act_window">
-        <field name="name">Action Name</field>
+        <field name="name">Character class</field>
         <field name="res_model">c_class</field>
         <field name="view_mode">tree,form</field>
         <field name="domain">[]</field>

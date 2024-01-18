@@ -13,10 +13,17 @@ class C_Class(models.Model):
         help='Class\'s name'
     )
 
-    
     spells_characteristic_id = fields.Many2one(
         string='Spells characteristic',
         comodel_name='characteristic',
         ondelete='restrict',
     )
     
+    proficency_save_ids = fields.Many2many(
+        string='Proficency save',
+        comodel_name='characteristic',
+        relation='characteristic_c_class_rel',
+        column1='characteristic_id',
+        column2='c_class_id',
+    )
+        

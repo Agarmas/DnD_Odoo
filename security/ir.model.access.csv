@@ -7,3 +7,4 @@ access_c_class,access.c_class,model_c_class,base.group_user,1,1,1,1
 access_characteristic,access.characteristic,model_characteristic,base.group_user,1,1,1,1
 access_language,access.language,model_language,base.group_user,1,1,1,1
 access_race,access.race,model_race,base.group_user,1,1,1,1
+access_skill,access.skill,model_skill,base.group_user,1,1,1,1

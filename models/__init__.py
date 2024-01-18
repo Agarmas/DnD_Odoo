@@ -8,3 +8,4 @@ from . import c_class
 from . import characteristic
 from . import language
 from . import race
+from . import skill
