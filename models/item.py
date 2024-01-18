@@ -1,6 +1,5 @@
 from odoo import models, fields, api
 
-
 class Item(models.Model):
     #Special fields
     _name = 'item'

@@ -27,15 +27,15 @@
         parent="dnd_menu" />
 
     <menuitem
-        id="spell_slot_menu"
-        name="Spell slots"
-        action="spell_slot_action"
-        parent="characters_menu" />
-
-    <menuitem
         id="character_menu"
         name="Characters"
         action="character_action"
+        parent="characters_menu" />
+
+    <menuitem
+        id="spell_slot_menu"
+        name="Spell slots"
+        action="spell_slot_action"
         parent="characters_menu" />
 
     <menuitem
@@ -50,10 +50,17 @@
         action="characteristic_action"
         parent="characters_menu" />
 
-    <!-- Language -->
+    <!-- Languages -->
     <menuitem
         id="language_menu"
         name="Languages"
         action="language_action"
+        parent="dnd_menu" />
+
+    <!-- Races -->
+    <menuitem
+        id="race_menu"
+        name="Races"
+        action="race_action"
         parent="dnd_menu" />
 </odoo>

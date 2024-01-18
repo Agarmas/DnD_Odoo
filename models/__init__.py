@@ -7,3 +7,4 @@ from . import character
 from . import c_class
 from . import characteristic
 from . import language
+from . import race

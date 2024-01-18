@@ -8,11 +8,11 @@ class SpellSlot(models.Model):
 
     # Fields
     ss_level = fields.Integer(
-        string='ss_level',
+        string='Spell slot level',
     )
     
     ss_qty = fields.Integer(
-        string='ss_qty',
+        string='Spell slot quantity',
     )
     
     character_id = fields.Many2one(
@@ -20,7 +20,6 @@ class SpellSlot(models.Model):
         comodel_name='character',
         ondelete='restrict',
     )
-    
     
     # SQL constraints
     _sql_constraints = [

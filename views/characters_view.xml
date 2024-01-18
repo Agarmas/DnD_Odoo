@@ -7,15 +7,20 @@
             <kanban>
                 <templates>
                     <t t-name="kanban-box">
-                        <div class="oe_kanban_image">
-                            <img src="/web/image/character/%s" alt="Character's image"
-                                class="oe_kanban_avatar oe_avatar-32" />
+                        <div>
+                            <img t-att-src="'/web/image/character/' + record.id + '/image'"
+                                class="oe_kanban_avatar oe_kanban_image" />
+                            <div class="oe_kanban_details">
+                                <strong class="oe_kanban_title">
+                                    <t t-esc="record.name.value" />
+                                </strong>
+                            </div>
                         </div>
-                        <p>
-                            <field name="name" />
-                        </p>
                     </t>
                 </templates>
+                <field name="name" />
+                <field name="img" widget="image" options="{'zoom': true}"
+                    data-src="/web/image/character/%s" />
             </kanban>
         </field>
     </record>
@@ -26,9 +31,9 @@
         <field name="arch" type="xml">
             <tree string="Characters">
                 <field name="name" />
-                <field name="c_class" />
+                <field name="c_classes_ids" />
                 <field name="level" />
-                <field name="race" />
+                <field name="race_id" />
             </tree>
         </field>
     </record>
@@ -40,29 +45,47 @@
             <form string="New character">
                 <sheet>
                     <group>
-                        <field name="img" widget="image" />
-                        <field name="name" />
-                        <field name="c_class" />
-                        <field name="exp" />
-                        <field name="level"
-                            readonly="1"
-                        />
-                        <field name="race" />
-                        <field name="strength" />
-                        <field name="dexterity" />
-                        <field name="constitution" />
-                        <field name="intelligence" />
-                        <field name="wisdom" />
-                        <field name="charisma" />
-                        <field name="spell_slots_ids" />
-                        <field name="items_ids" />
-                        <field name="spells_known_ids" />
-                        <field name="spells_prepared_ids" />
                         <field name="max_hp" />
                         <field name="hp" />
                         <field name="necrotic_dmg" />
-                        <field name="money" />
+                        <field name="armor_class" />
+                        <field name="proficency_bonus" 
+                        readonly="1"
+                        />
+                        <field name="inspiration" />
                     </group>
+                    <notebook>
+                        <page name="personal" string="Personal">
+                            <group>
+                                <field name="img" widget="image" />
+                                <field name="name" />
+                                <field name="c_classes_ids" />
+                                <field name="exp" />
+                                <field name="level"
+                                    readonly="1"
+                                />
+                                <field name="race_id" />
+                                <field name="alingment" />
+                                <field name="age" />
+                                <field name="height" />
+                                <field name="weight" />
+                                <field name="lore" />
+                            </group>
+                        </page>
+                        <page name="magic" string="Magic">
+                            <group>
+                                <field name="spell_slots_ids" />
+                                <field name="spells_known_ids" />
+                                <field name="spells_prepared_ids" />
+                            </group>
+                        </page>
+                        <page name="inventory" string="Inventory">
+                            <group>
+                                <field name="money" />
+                                <field name="items_ids" />
+                            </group>
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>

@@ -1,22 +1,24 @@
 from odoo import models, fields, api
 
-
 class Character(models.Model):
-    #Special fields
+    # Special fields
     _name = 'character'
     _description = 'Characters in the game'
 
-    #Fields
+    # Fields
     name = fields.Char(
         string='Name',
         size=255,
         required=True,
         help='Character\'s name'
     )
-
-    c_class = fields.Selection(
-        string='Class',
-        selection=[('Barbarian', 'barbarian'), ('Bard', 'bard'), ('Cleric', 'cleric'), ('Druid', 'druid')]
+    
+    c_classes_ids = fields.Many2many(
+        string='Classes',
+        comodel_name='c_class',
+        relation='c_class_character_rel',
+        column1='c_class_id',
+        column2='character_id',
     )
     
     exp = fields.Integer(
@@ -24,43 +26,23 @@ class Character(models.Model):
     )
     
     level = fields.Integer(
+        string='Level',        
         compute='_compute_level', 
         store=True  
     )
     
-    race = fields.Selection(
+    race_id = fields.Many2one(
         string='Race',
-        selection=[('valor1', 'valor1'), ('valor2', 'valor2')]
+        comodel_name='race',
+        ondelete='restrict',
     )
     
-    strength = fields.Char(
-        string='Strength',
-        size=255,
-    )
-    
-    dexterity = fields.Char(
-        string='Dexterity',
-        size=255
-    )
-    
-    constitution = fields.Char(
-        string='Constitution',
-        size=255,
-    )
-    
-    intelligence = fields.Char(
-        string='Intelligence',
-        size=255,
-    )
-    
-    wisdom = fields.Char(
-        string='Wisdom',
-        size=255
-    )
-    
-    charisma = fields.Char(
-        string='Charisma',
-        size=255
+    languages_ids = fields.Many2many(
+        string='languages',
+        comodel_name='language',
+        relation='language_character_rel',
+        column1='language_id',
+        column2='character_id',
     )
 
     spell_slots_ids = fields.One2many(
@@ -102,7 +84,7 @@ class Character(models.Model):
     )
     
     necrotic_dmg = fields.Integer(
-        string='necrotic_dmg',
+        string='Necrotic damage',
     )
     
     money = fields.Integer(
@@ -112,3 +94,104 @@ class Character(models.Model):
     img = fields.Binary(
         string='Image',
     )
+    
+    alingment = fields.Selection(
+        string='Alingment',
+        selection=[('CE', 'Chaotic-Evil'), ('CN', 'Chaotic-Neutral'), ('CG', 'Chaotic-Good'), ('NE', 'Neutral-Evil'), ('NN', 'Neutral-Neutral'), ('NG', 'Neutral-Good'), ('LE', 'Lawful-Evil'), ('LN', 'Lawful-Neutral'), ('LG', 'Lawful-Good')]
+    )
+    
+    inspiration = fields.Boolean(
+        string='Inspiration',
+    )
+    
+    armor_class = fields.Integer(
+        string='Armor class',
+    )
+    
+    proficency_bonus = fields.Integer(
+        string='Proficency bonus',
+        compute='_compute_proficency_bonus',
+        store=True
+    )
+    
+    initiative = fields.Integer(
+        string='Initiative',
+    )
+    
+    speed = fields.Integer(
+        string='Speed',
+        help='Ft'
+    )
+    
+    age = fields.Integer(
+        string='Age',
+    )
+    
+    height = fields.Integer(
+        string='Height',
+        help='cm'
+    )
+    
+    weight = fields.Float(
+        string='Weight',
+        help='Kg'
+    )
+    
+    lore = fields.Text(
+        string='Lore',
+    )
+
+    # Computed 
+    @api.depends('exp')
+    def _compute_level(self):
+        for character in self:
+            if character.exp < 300:
+                character.level = 1
+            elif character.exp < 900:
+                character.level = 2
+            elif character.exp < 2700:
+                character.level = 3
+            elif character.exp < 6500:
+                character.level = 4
+            elif character.exp < 14000:
+                character.level = 5
+            elif character.exp < 23000:
+                character.level = 6
+            elif character.exp < 34000:
+                character.level = 7
+            elif character.exp < 48000:
+                character.level = 8
+            elif character.exp < 64000:
+                character.level = 9
+            elif character.exp < 85000:
+                character.level = 10
+            elif character.exp < 100000:
+                character.level = 11
+            elif character.exp < 120000:
+                character.level = 12
+            elif character.exp < 140000:
+                character.level = 13
+            elif character.exp < 165000:
+                character.level = 14
+            elif character.exp < 195000:
+                character.level = 15
+            elif character.exp < 225000:
+                character.level = 16
+            elif character.exp < 265000:
+                character.level = 17
+            elif character.exp < 305000:
+                character.level = 18
+            elif character.exp < 355000:
+                character.level = 19
+            else:
+                character.level = 20
+
+    @api.depends('level')
+    def _compute_proficency_bonus(self):
+            for character in self:
+                if character.level > 0:
+                    character.proficency_bonus = (character.level - 1) / 4 + 2
+                    if character.proficency_bonus < 1:
+                        character.proficency_bonus = 1
+                else:
+                    character.proficency_bonus = 0
