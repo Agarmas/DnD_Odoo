@@ -9,3 +9,4 @@ from . import characteristic
 from . import language
 from . import race
 from . import skill
+from . import char_value

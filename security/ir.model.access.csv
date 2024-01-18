@@ -8,3 +8,4 @@ access_characteristic,access.characteristic,model_characteristic,base.group_user
 access_language,access.language,model_language,base.group_user,1,1,1,1
 access_race,access.race,model_race,base.group_user,1,1,1,1
 access_skill,access.skill,model_skill,base.group_user,1,1,1,1
+access_char_modifier,access.char_modifier,model_char_modifier,base.group_user,1,1,1,1
