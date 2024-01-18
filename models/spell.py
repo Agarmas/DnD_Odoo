@@ -59,7 +59,7 @@ class Spell(models.Model):
     )
 
     ritual = fields.Boolean(
-        string='ritual',
+        string='Ritual',
     )
 
     material_cost = fields.Char(

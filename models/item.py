@@ -40,3 +40,9 @@ class Item(models.Model):
         help='Item\'s description'
     )
     
+    characters_ids = fields.One2many(
+        string='Characters',
+        comodel_name='character',
+        inverse_name='armor_id',
+    )
+    

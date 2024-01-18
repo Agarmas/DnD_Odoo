@@ -59,6 +59,12 @@ class Character(models.Model):
         column2='character_id',
     )
     
+    armor_id = fields.Many2one(
+        string='Armor',
+        comodel_name='item',
+        ondelete='restrict',
+    )
+    
     spells_known_ids = fields.Many2many(
         string='Spells known',
         comodel_name='spell',
@@ -82,6 +88,11 @@ class Character(models.Model):
     hp = fields.Integer(
         string='Hp',
     )
+    
+    temp_hp = fields.Integer(
+        string='Temporal hp',
+    )
+    
     
     necrotic_dmg = fields.Integer(
         string='Necrotic damage',
@@ -140,6 +151,14 @@ class Character(models.Model):
     lore = fields.Text(
         string='Lore',
     )
+    
+    skills_ids = fields.Many2many(
+        string='Skills',
+        comodel_name='skill',
+        relation='skill_character_rel',
+        column1='skill_id',
+        column2='character_id',
+    )    
 
     # Computed 
     @api.depends('exp')
@@ -195,3 +214,31 @@ class Character(models.Model):
                         character.proficency_bonus = 1
                 else:
                     character.proficency_bonus = 0
+
+    # Checks
+    @api.onchange('spells_prepared_ids')
+    def onchange_prepared_spells(self):
+        result = {}
+        for prepared_spell in self.spells_prepared_ids:
+            if prepared_spell and not prepared_spell in self.spells_known_ids:
+                result = {
+                    'value': {'spells_prepared_ids': ''},
+                    'warning': {
+                        'title': 'Invalid spell',
+                        'message': 'You don\'t know this spell'
+                    }
+                }
+        return result
+    
+    @api.onchange('hp')
+    def onchange_prepared_spells(self):
+        result = {}
+        if self.hp > self.max_hp:
+            result = {
+                'value': {'hp': ''},
+                'warning': {
+                    'title': 'Invalid hp',
+                    'message': 'Hp > max_hp'
+                }
+            }
+        return result

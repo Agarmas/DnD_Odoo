@@ -59,7 +59,7 @@
         id="skill_menu"
         name="Skills"
         action="skill_action"
-        parent="characteristics_ids" />
+        parent="characteristics_menu" />
 
     <!-- Languages -->
     <menuitem

@@ -27,7 +27,7 @@
     </record>
 
     <record id="skill_action" model="ir.actions.act_window">
-        <field name="name">Action Name</field>
+        <field name="name">Skill</field>
         <field name="res_model">skill</field>
         <field name="view_mode">tree,form</field>
         <field name="domain">[]</field>

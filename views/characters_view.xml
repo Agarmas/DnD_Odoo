@@ -47,12 +47,15 @@
                     <group>
                         <field name="max_hp" />
                         <field name="hp" />
+                        <field name="temp_hp" />
                         <field name="necrotic_dmg" />
                         <field name="armor_class" />
                         <field name="proficency_bonus" 
                         readonly="1"
                         />
                         <field name="inspiration" />
+                        <field name="skills_ids" />
+                        <field name="armor_id" />
                     </group>
                     <notebook>
                         <page name="personal" string="Personal">
