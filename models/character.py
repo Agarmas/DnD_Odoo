@@ -50,14 +50,13 @@ class Character(models.Model):
         comodel_name='spell_slot',
         inverse_name='character_id',
     )
-
-    items_ids = fields.Many2many(
+    
+    inventory_items_ids = fields.One2many(
         string='Items',
-        comodel_name='item',
-        relation='item_character_rel',
-        column1='item_id',
-        column2='character_id',
+        comodel_name='inventory_item',
+        inverse_name='character_id',
     )
+    
     
     armor_id = fields.Many2one(
         string='Armor',

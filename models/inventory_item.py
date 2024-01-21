@@ -19,7 +19,8 @@ class InventoryItem(models.Model):
     )
 
     amount = fields.Integer(
-        string='Amount',   
+        string='Amount',
+        default=1,
     )
 
     # Sql conctraints

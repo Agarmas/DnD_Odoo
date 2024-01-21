@@ -5,7 +5,6 @@
         <field name="model">char_value</field>
         <field name="arch" type="xml">
             <tree string="Characteristic values">
-                <field name="character_id" />
                 <field name="characteristic_id" />
                 <field name="value" />
                 <field name="modifier" />
@@ -20,7 +19,6 @@
             <form string="New characteristic value">
                 <sheet>
                     <group>
-                        <field name="character_id" />
                         <field name="characteristic_id" />
                         <field name="value" />
                         <field name="modifier" 

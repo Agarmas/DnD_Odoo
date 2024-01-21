@@ -6,6 +6,7 @@
         <field name="arch" type="xml">
             <tree string="Spell slots">
                 <field name="ss_level" />
+                <field name="ss_max" />
                 <field name="ss_qty" />
             </tree>
         </field>
@@ -19,6 +20,7 @@
                 <sheet>
                     <group>
                         <field name="ss_level" />
+                        <field name="ss_max" />
                         <field name="ss_qty" />
                     </group>
                 </sheet>

@@ -24,6 +24,7 @@
                         <field name="hp" />
                         <field name="temp_hp" />
                         <field name="necrotic_dmg" />
+                        <field name="armor_id" />
                         <field name="armor_class" />
                         <field name="proficency_bonus" 
                         readonly="1"
@@ -31,13 +32,13 @@
                         <field name="inspiration" />
                         <field name="characteristics_ids" />
                         <field name="skills_ids" />
-                        <field name="armor_id" />
+                        <field name="languages_ids" />
                     </group>
                     <notebook>
                         <page name="inventory" string="Inventory">
                             <group>
                                 <field name="money" />
-                                <field name="items_ids" />
+                                <field name="inventory_items_ids" />
                             </group>
                         </page>
                         <page name="magic" string="Magic">
