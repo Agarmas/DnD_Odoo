@@ -93,7 +93,6 @@ class Character(models.Model):
         string='Temporal hp',
     )
     
-    
     necrotic_dmg = fields.Integer(
         string='Necrotic damage',
     )
@@ -150,6 +149,11 @@ class Character(models.Model):
     
     lore = fields.Text(
         string='Lore',
+    )
+    
+    background = fields.Char(
+        string='Background',
+        size=255,
     )
     
     characteristics_ids = fields.One2many(

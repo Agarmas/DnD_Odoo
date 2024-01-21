@@ -49,6 +49,12 @@
         name="Characteristics"
         action="char_value_action"
         parent="characters_menu"/>
+    
+    <menuitem
+        id="inventory_menu"
+        name="Inventory"
+        action="inventory_item_action"
+        parent="characters_menu"/>
 
     <!-- Characteristics -->
     <menuitem

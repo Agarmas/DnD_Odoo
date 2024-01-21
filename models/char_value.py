@@ -39,6 +39,6 @@ class CharValue(models.Model):
     @api.depends('value')
     def _compute_modifier(self):
         for record in self:
-            record.modifier = math.floor((self.value - 10) / 2) 
+            record.modifier = math.floor((record.value - 10) / 2) 
     
     

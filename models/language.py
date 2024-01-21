@@ -9,5 +9,4 @@ class Language(models.Model):
     name = fields.Char(
         string='Name',
         size=255
-    )
-   
+    )  

@@ -10,3 +10,4 @@ from . import language
 from . import race
 from . import skill
 from . import char_value
+from . import inventory_item

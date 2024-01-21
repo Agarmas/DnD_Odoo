@@ -31,6 +31,7 @@
         'views/races_view.xml',
         'views/skills_view.xml',
         'views/char_values_view.xml',
+        'views/inventory_items_view.xml',
         'views/menu.xml',
     ],
     

@@ -9,3 +9,4 @@ access_language,access.language,model_language,base.group_user,1,1,1,1
 access_race,access.race,model_race,base.group_user,1,1,1,1
 access_skill,access.skill,model_skill,base.group_user,1,1,1,1
 access_char_value,access.char_value,model_char_value,base.group_user,1,1,1,1
+access_inventory_item,access.inventory_item,model_inventory_item,base.group_user,1,1,1,1

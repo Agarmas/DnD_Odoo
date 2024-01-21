@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="inventory_item_view_tree" model="ir.ui.view">
+        <field name="name">inventory_item.view.tree</field>
+        <field name="model">inventory_item</field>
+        <field name="arch" type="xml">
+            <tree string="Inventory">
+                <field name="character_id" />
+                <field name="item_id" />
+                <field name="amount" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="inventory_item_view_form" model="ir.ui.view">
+        <field name="name">inventory_item.view.form</field>
+        <field name="model">inventory_item</field>
+        <field name="arch" type="xml">
+            <form string="New Inventory Item">
+                <sheet>
+                    <group>
+                        <field name="character_id" />
+                        <field name="item_id" />
+                        <field name="amount" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="inventory_item_action" model="ir.actions.act_window">
+        <field name="name">Inventory Item</field>
+        <field name="res_model">inventory_item</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+</odoo>

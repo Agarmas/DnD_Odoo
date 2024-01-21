@@ -1,30 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
 <odoo>
-    <record id="character_view_kanban" model="ir.ui.view">
-        <field name="name">character.view.kanban</field>
-        <field name="model">character</field>
-        <field name="arch" type="xml">
-            <kanban>
-                <templates>
-                    <t t-name="kanban-box">
-                        <div>
-                            <img t-att-src="'/web/image/character/' + record.id + '/image'"
-                                class="oe_kanban_avatar oe_kanban_image" />
-                            <div class="oe_kanban_details">
-                                <strong class="oe_kanban_title">
-                                    <t t-esc="record.name.value" />
-                                </strong>
-                            </div>
-                        </div>
-                    </t>
-                </templates>
-                <field name="name" />
-                <field name="img" widget="image" options="{'zoom': true}"
-                    data-src="/web/image/character/%s" />
-            </kanban>
-        </field>
-    </record>
-
     <record id="character_view_tree" model="ir.ui.view">
         <field name="name">character.view.tree</field>
         <field name="model">character</field>
@@ -59,6 +34,19 @@
                         <field name="armor_id" />
                     </group>
                     <notebook>
+                        <page name="inventory" string="Inventory">
+                            <group>
+                                <field name="money" />
+                                <field name="items_ids" />
+                            </group>
+                        </page>
+                        <page name="magic" string="Magic">
+                            <group>
+                                <field name="spell_slots_ids" />
+                                <field name="spells_known_ids" />
+                                <field name="spells_prepared_ids" />
+                            </group>
+                        </page>
                         <page name="personal" string="Personal">
                             <group>
                                 <field name="img" widget="image" />
@@ -69,24 +57,12 @@
                                     readonly="1"
                                 />
                                 <field name="race_id" />
+                                <field name="background" />
                                 <field name="alingment" />
                                 <field name="age" />
                                 <field name="height" />
                                 <field name="weight" />
                                 <field name="lore" />
-                            </group>
-                        </page>
-                        <page name="magic" string="Magic">
-                            <group>
-                                <field name="spell_slots_ids" />
-                                <field name="spells_known_ids" />
-                                <field name="spells_prepared_ids" />
-                            </group>
-                        </page>
-                        <page name="inventory" string="Inventory">
-                            <group>
-                                <field name="money" />
-                                <field name="items_ids" />
                             </group>
                         </page>
                     </notebook>
@@ -98,7 +74,7 @@
     <record id="character_action" model="ir.actions.act_window">
         <field name="name">Character</field>
         <field name="res_model">character</field>
-        <field name="view_mode">kanban,tree,form</field>
+        <field name="view_mode">tree,form</field>
         <field name="domain">[]</field>
         <field name="context">{}</field>
     </record>
